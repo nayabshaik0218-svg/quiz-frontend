@@ -40,7 +40,7 @@
 
     async function fetchQuestions() {
       try {
-        const response = await fetch("http://localhost:3000/api/questions");
+        const response = await fetch("https://quiz-backend-git-main-nayabshaik0218-svgs-projects.vercel.app/api/questions");
         if (!response.ok) throw new Error("Failed to fetch questions");
         questions = await response.json();
         refs.qCountEl.textContent = questions.length;
