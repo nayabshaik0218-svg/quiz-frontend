@@ -41,7 +41,11 @@
         async function fetchQuestions() {
             try {
                 // Ensure the URL matches your backend Vercel deployment
-                const response = await fetch("https://quiz-backend-git-main-nayabshaik0218-svgs-projects.vercel.app/api/questions");
+                // --- CORRECTED line in script.js ---
+const response = await fetch("https://quiz-backend-git-main-nayabshaik0218-svgs-projects.vercel.app/api/questions", {
+    // ⚠️ THIS IS THE CRITICAL ADDITION ⚠️
+    credentials: 'include' 
+});
                 if (!response.ok) throw new Error("Failed to fetch questions");
                 
                 // Note: If your backend sends an array directly, you don't need .data, 
