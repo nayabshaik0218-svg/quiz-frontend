@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colorful Topic-Based Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Choose Your Quiz Settings</h1>
+    <label>
+      Number of Questions:
+      <input type="number" id="duration" value="10" min="1" max="10" />
+    </label>
+    <label>
+      Time per Question (seconds):
+      <input type="number" id="perQuestion" value="30" min="5" max="120" />
+    </label>
+    <label>
+      <input type="checkbox" id="randomize" checked />
+      Randomize Questions
+    </label>
+    <button id="startBtn">Start Quiz</button>
+    <p>Total Questions Available: <span id="q-count">10</span></p>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz" class="hidden" aria-live="polite">
+    <div id="timer-container">
+      <div>Quiz Timer: <span id="timer">00:00</span></div>
+      <div>Question Timer: <span id="qTimer">00:00</span></div>
+    </div>
+    <progress id="progress" value="0" max="10"></progress>
+    <div id="progressText">0 / 10</div>
+
+    <div id="questionText" class="question-text"></div>
+    <div id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+    <div id="navButtons">
+      <button id="prevBtn" aria-label="Previous Question">Previous</button>
+      <button id="nextBtn" aria-label="Next Question">Next</button>
+      <button id="submitBtn" aria-label="Submit Quiz">Submit</button>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+  <section id="result" class="hidden">
+    <h2>Quiz Results</h2>
+    <div id="resultSummary"></div>
+    <div id="scoreBreakdown" class="score-breakdown"></div>
+
+    <h3>Review Questions</h3>
+    <div id="reviewList" class="review-list"></div>
+
+    <button id="retryBtn">Retry Quiz</button>
+    <button id="homeBtn">Back to Home</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
